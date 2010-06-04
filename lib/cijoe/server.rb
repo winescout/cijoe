@@ -13,6 +13,10 @@ class CIJoe
     set :lock, true
 
     before { joe.restore }
+    
+    configure :production, :development do 
+      CIJoe::Campfire.activate
+    end
 
     get '/ping' do
       if joe.building? || !joe.last_build || !joe.last_build.worked?
@@ -67,8 +71,6 @@ class CIJoe
       super
       check_project
       @joe = CIJoe.new(options.project_path)
-
-      CIJoe::Campfire.activate
     end
 
     def self.start(host, port, project_path)

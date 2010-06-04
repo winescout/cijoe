@@ -1,4 +1,4 @@
-require 'helper'
+require File.join(File.dirname(__FILE__), "helper")
 
 class TestCIJoe < Test::Unit::TestCase
   def test_raise_error_on_invalid_command

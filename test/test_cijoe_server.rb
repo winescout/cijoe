@@ -1,4 +1,5 @@
-require "helper"
+require File.join(File.dirname(__FILE__), "helper")
+gem 'rack-test'
 require "rack/test"
 require "cijoe/server"
 
