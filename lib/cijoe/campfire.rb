@@ -13,9 +13,8 @@ class CIJoe
         puts "Can't load Campfire notifier."
         puts "Please add the following to your project's .git/config:"
         puts "[campfire]"
-        puts "\tuser = your@campfire.email"
-        puts "\tpass = passw0rd"
         puts "\tsubdomain = whatever"
+        puts "\ttoken = your_campfire_token"
         puts "\troom = Awesomeness"
         puts "\tssl = false"
       end
