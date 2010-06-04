@@ -1,27 +1,29 @@
+require 'rubygems'
+
 desc "Build a gem"
 task :gem => [ :gemspec, :build ]
 
 begin
+  gem 'jeweler'
   require 'jeweler'
-
   $LOAD_PATH.unshift File.dirname(__FILE__) + '/lib'
-  require 'cijoe/version'
+  #require 'cijoe/version'
 
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "cijoe"
     gemspec.summary = "CI Joe is a simple Continuous Integration server."
     gemspec.description = "CI Joe is a simple Continuous Integration server."
-    gemspec.email = "chris@ozmm.org"
-    gemspec.homepage = "http://github.com/defunkt/cijoe"
-    gemspec.authors = ["Chris Wanstrath"]
+    gemspec.email = "winescout@gmail.com"
+    gemspec.homepage = "http://github.com/winescout/cijoe"
+    gemspec.authors = ["Matthew Clark"]
     gemspec.add_dependency 'choice'
     gemspec.add_dependency 'sinatra'
     gemspec.add_development_dependency 'rack-test'
-    gemspec.version = CIJoe::Version.to_s
+    gemspec.version = 1.0
   end
-rescue LoadError
-  puts "Jeweler not available."
-  puts "Install it with: gem install jeweler"
+#rescue LoadError
+#  puts "Jeweler not available."
+#  puts "Install it with: gem install jeweler"
 end
 
 desc "Publish a RubyGem"
